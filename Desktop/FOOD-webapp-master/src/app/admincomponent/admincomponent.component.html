@@ -1,0 +1,132 @@
+<h1 align="center" class="heading">WELCOME TO ORDERS SECTION</h1>
+
+<div class="parent">
+  <div class="child1">
+    <p (ngModel)="(date)">{{ date }}</p>
+
+    <mat-card *ngFor="let item of orderarray"
+      ><div class="parent2">
+        <div class="child1">{{ item.time }}</div>
+        <div class="child2">
+          {{ item.name }} {{ item.id }}<br />
+          <button (click)="orderDetails(item)" *ngIf="allorderdetails">
+            View Order Details
+          </button>
+        </div>
+        <div class="child3" *ngIf="amount">
+          <form [formGroup]="myform">
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                placeholder="Amount To Pay"
+                type="number"
+                formControlName="payment"
+              />
+            </mat-form-field>
+          </form>
+          <button mat-raised-button color="primary" (click)="delivery(list)">
+            Delivered
+          </button>
+        </div>
+        <div class="child4">Status:{{ item.orderstatus }}</div>
+      </div></mat-card
+    >
+  </div>
+  <div class="child5">
+    <!-- <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker opened="true"></mat-datepicker>
+    </mat-form-field> -->
+
+    <mat-calendar
+      [selected]="selectedDate"
+      (selectedChange)="onSelect($event)"
+    ></mat-calendar>
+  </div>
+</div>
+<div *ngIf="showModal" id="myModal" class="modal">
+  <div class="modal-content">
+    <span (click)="showModal = false" class="close">&times;</span>
+    <mat-form-field>
+      <b>
+        <input
+          matInput
+          placeholder="Phonenumber"
+          [(ngModel)]="phonenumber"
+          readonly
+      /></b>
+    </mat-form-field>
+    <br />
+    <div>
+      <table>
+        <tr>
+          <th>Item name</th>
+          <th>pricePerKg</th>
+          <th>quantity</th>
+        </tr>
+        <tr *ngFor="let list of orderlist">
+          <td>{{ list.itemName }}</td>
+          <td>{{ list.pricePerKg }}</td>
+          <td>{{ list.quantity }}</td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <button mat-flat-button color="primary" (click)="outfordelivery()">
+      Out for delivery
+    </button>
+
+    <!-- <mat-form-field class="example-full-width">
+        <input
+          matInput
+          placeholder="ItemName"
+          value="{{ list.itemName }}"
+          readonly
+        /> </mat-form-field
+      ><br />
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          placeholder="ItemPrice" 
+          value="{{ list.pricePerKg }}"
+          readonly
+        /> </mat-form-field
+      ><br />
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          placeholder="itemQuantity"
+          value="{{ list.quantity }}"
+          readonly
+        />
+      </mat-form-field>
+      <br />
+      <button
+        mat-flat-button
+        color="primary"
+        *ngIf="showOutForDeliveryButton"
+        (click)="outfordelivery(list)"
+      >
+        Out for delivery
+      </button>
+      <form [formGroup]="myform">
+        <mat-form-field *ngIf="showDeliveryButton" class="example-full-width">
+          <input
+            matInput
+            placeholder="Amount To Pay"
+            type="number"
+            formControlName="payment"
+          />
+        </mat-form-field> -->
+    <!-- 
+      <button
+        mat-raised-button
+        color="primary"
+        *ngIf="showDeliveryButton"
+        (click)="delivery(list)"
+      >
+        Delivery
+      </button> -->
+  </div>
+</div>
