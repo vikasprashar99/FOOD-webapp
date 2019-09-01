@@ -74,12 +74,13 @@
     background-color: #fefefe;
     transform: translate(-50%, -50%);
     border: 1px solid #888;
-    width: 80%;
-    height: 12%;
-    top: 506px;
+    width: 70%;
+    height: 40%;
+    top: 400px;
     left: 50%;
     border-radius: 0.5em;
-    padding: 1em;
+    padding: 0.5em;
+    font-size: 15px;
   }
   /* The Close Button */
   .close {
@@ -89,24 +90,43 @@
   .content {
     width: 300px;
   }
-  .modal {
-    z-index: 10; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 450px;
-    height: 3000px;
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
-  }
 
   .heading {
     font-size: 10px;
   }
   .mat-card {
-    font-size: 10px;
+    font-size: 8px;
   }
   .button {
     font-size: 2px;
+  }
+  .mat-raised-button {
+    transform: scale(0.5);
+  }
+  .child2 {
+    padding-left: 5px;
+  }
+
+  .matcardsize {
+    padding: 0px;
+  }
+  .mat-calendar {
+    zoom: 0.54;
+  }
+  .child1 {
+    flex: 0.3;
+  }
+  .child2 {
+    flex: 0.5;
+  }
+  .child5 {
+    flex: 0.63;
+  }
+  table {
+    width: 80%;
+  }
+  .child3 {
+    flex: 0.6;
   }
 }
 

@@ -3,13 +3,17 @@
 <div class="parent">
   <div class="child1">
     <p (ngModel)="(date)">{{ date }}</p>
-
-    <mat-card *ngFor="let item of orderarray"
+    <mat-card *ngFor="let item of orderarray" class="matcardsize"
       ><div class="parent2">
         <div class="child1">{{ item.time }}</div>
         <div class="child2">
-          {{ item.name }} {{ item.id }}<br />
-          <button (click)="orderDetails(item)" *ngIf="allorderdetails">
+          Order Name: {{ item.name }}<br />Order Number: {{ item.id }}<br />
+          <button
+            mat-raised-button
+            color="warn"
+            (click)="orderDetails(item)"
+            *ngIf="allorderdetails"
+          >
             View Order Details
           </button>
         </div>
@@ -62,8 +66,8 @@
       <table>
         <tr>
           <th>Item name</th>
-          <th>pricePerKg</th>
-          <th>quantity</th>
+          <th>PriceperKg</th>
+          <th>Quantity</th>
         </tr>
         <tr *ngFor="let list of orderlist">
           <td>{{ list.itemName }}</td>
@@ -73,9 +77,9 @@
       </table>
     </div>
     <br />
-    <button mat-flat-button color="primary" (click)="outfordelivery()">
+    <mat-slide-toggle (click)="outfordelivery()">
       Out for delivery
-    </button>
+    </mat-slide-toggle>
 
     <!-- <mat-form-field class="example-full-width">
         <input

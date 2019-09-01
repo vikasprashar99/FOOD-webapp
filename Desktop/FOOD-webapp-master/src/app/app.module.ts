@@ -19,6 +19,7 @@ import {
   MatNativeDateModule,
   MatIconModule
 } from "@angular/material";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
 
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { RequestsComponent } from "./requests/requests.component";
@@ -50,6 +51,7 @@ import { OrderDetailscomponentComponent } from "./order-detailscomponent/order-d
     MatDatepickerModule,
     MatCardModule,
     MatFormFieldModule,
+    MatSlideToggleModule,
     FormsModule,
     MatInputModule,
     MatNativeDateModule,
