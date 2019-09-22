@@ -1,0 +1,32 @@
+<div class="outer">
+  <h2>NOTIFICATION PANEL</h2>
+
+  <mat-card>
+      <!-- <mat-card-header>
+          <mat-chip-list>
+              <mat-chip [(ngStyle)]="kk" (click)="callAndroid(0)" selected>Android</mat-chip>
+              <mat-chip [(ngStyle)]="kk" (click)="calliOS(1)" selected>iOS</mat-chip>
+              
+              </mat-chip-list>
+
+      </mat-card-header>   -->
+  <mat-card-content class="matcardsetting">
+    <div >
+      <form [formGroup]="Myform">
+      <mat-form-field style="width:380px">
+          <input matInput placeholder="Title For Notification" formControlName="Title" name="noti" />
+      </mat-form-field>
+
+      <br>
+
+  <textarea style="width:380px" placeholder="Write a message" rows="10"  formControlName="message"  ></textarea>
+   <br>
+   <br>
+  <button mat-raised-button [(ngStyle)]="kk" (click)="clicked()">Submit</button>
+</form>
+  </div>
+</mat-card-content>
+</mat-card>
+    
+</div>
+

@@ -1,0 +1,19 @@
+.outer{
+  padding: 8px;
+  align-self: center;
+}
+.matcardsetting{
+  height: 400px;
+  
+ }
+.po {
+  width: 50px;
+  height: 50 px;
+}
+ 
+mat-card{
+  width: 95%;
+ }
+ .inner{
+   align-self: center;
+ }

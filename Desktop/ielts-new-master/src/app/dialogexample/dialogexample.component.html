@@ -1,0 +1,63 @@
+<h3 mat-dialog-title align="left">EDIT ENTERPRISE</h3>
+<mat-dialog-content>
+  
+  <form [formGroup]="enterprise" class="example-form">
+    <mat-form-field>
+      <input matInput placeholder="Enterprise Id"  formControlName="E_id" readonly>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Enterprise Name" formControlName="E_name">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <textarea matInput placeholder="Enterprise discription" formControlName="E_discription"></textarea>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Primary Address" formControlName="E_Address">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input  matInput placeholder="Primary Email" formControlName="E_primary_email" readonly>
+    
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Mobile"formControlName="E_primary_mobile">
+      <span matPrefix>+91&nbsp;</span>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Reference Code"formControlName="E_reference_code">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Logo"formControlName="E_logo_url">
+    </mat-form-field>
+    <br>
+    <mat-label for="singleFile">Choose Logo</mat-label>
+    <br><br>
+    <mat-card >
+        <mat-card-content class="card">
+          <div *ngIf="fileshow" class="progress">
+              <mat-spinner [diameter]="50"></mat-spinner>
+          </div>
+      
+          <label class="btn btn-default">
+           <input type="file" (change)="selectFile($event)">
+           </label>
+           <img mat-card-sm-image *ngIf="imageurl" [src]="imageurl" alt="selected image">
+           <mat-card-actions>
+           <button mat-button [(ngStyle)]="kk" [disabled]="!selectedFiles" (click)="upload()">Upload</button>
+          </mat-card-actions>
+           </mat-card-content>
+    </mat-card>    <br>
+    
+      
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <mat-chip [(ngStyle)]="kk"  (click)="submit()" style="margin-right:8px">Save</mat-chip>
+  <mat-chip  [(ngStyle)]="kk" (click)="noOneClick()">Close</mat-chip>
+</mat-dialog-actions>

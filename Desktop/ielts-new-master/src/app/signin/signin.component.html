@@ -1,0 +1,82 @@
+<div class="parent">
+  <form [formGroup]="signindetails" class="my-form">
+    <div class="modal">
+      <div class="modal-content" fxLayout="column">
+        <div class="headerclass" fxLayout.xs="column">
+          <b>{{ newPasswordField == false ? "SIGN IN" : "Change Password" }}</b>
+        </div>
+
+        <div class="input-div-class">
+          <i class="material-icons orange600">email</i>
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="E_email"
+              style="width:260px"
+              placeholder="Username"
+              class="input-class"
+              type="email"
+            />
+          </mat-form-field>
+        </div>
+        <br />
+        <div *ngIf="newPasswordField == false" class="input-pwd-class">
+          <i class="material-icons orange600">lock</i>
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="E_password"
+              style="width:260px"
+              placeholder="Password"
+              class="password-class"
+              type="password"
+            />
+          </mat-form-field>
+        </div>
+        <div
+          *ngIf="newPasswordField"
+          class="input-pwd-class"
+          fxLayout.xs="column"
+        >
+          <i class="material-icons orange600">lock</i
+          ><input
+            matInput
+            formControlName="newPassword"
+            style="width:260px"
+            placeholder="New Password"
+            class="password-class"
+            type="password"
+          />
+        </div>
+        <br />
+        <div class="submit-button" align="center" fxLayout.xs="column">
+          <mat-chip-list align="center">
+            <mat-chip
+              style="color: yellow"
+              (click)="
+                newPasswordField == false ? login() : changePasswordMethod()
+              "
+              selected
+              >Login</mat-chip
+            >
+            <mat-chip
+              *ngIf="newPasswordField == false"
+              style="color: yellow"
+              color="primary"
+              (click)="forgot()"
+              selected
+              >Forgot Password?</mat-chip
+            >
+          </mat-chip-list>
+        </div>
+        <div style="padding-top:50px" *ngIf="pbshowandhide">
+          <!-- <mat-progress-bar
+            mode="indeterminate"
+            [value]="value"
+          ></mat-progress-bar> -->
+          <mat-spinner></mat-spinner>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

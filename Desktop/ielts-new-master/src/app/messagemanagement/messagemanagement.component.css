@@ -1,0 +1,13 @@
+@media only screen and (max-width: 540px) {
+  /* For mobile phones: */
+
+  .mat-content {
+    flex: 30;
+    flex-direction: row;
+    overflow: hidden;
+  }
+
+  .mat-des {
+    font-size: 0px;
+  }
+}

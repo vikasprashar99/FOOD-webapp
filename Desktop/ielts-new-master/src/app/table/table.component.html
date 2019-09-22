@@ -1,0 +1,101 @@
+
+
+<div class="outer">
+ <div class="inner">
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between">
+  <h2 style="display:inline;">DASHBOARD</h2>
+     <h2 style="display:inline;">Welcome Admin: {{useremail}}</h2>
+    </div>
+    
+<div class="example-container mat-elevation-z8">
+
+    <table mat-table [dataSource]="model" matSort>
+    
+   <ng-container matColumnDef="position" sticky>
+    <th mat-header-cell *matHeaderCellDef> No </th>>
+    <td mat-cell *matCellDef="let element; let i = index">{{i+1}}</td>>
+  </ng-container>
+  
+  <ng-container matColumnDef="E_id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header > E_id </th>>
+    <td mat-cell *matCellDef="let element"> <a [routerLink]="['/dashboard/table/users', element.E_id]"> {{element.E_id}} </a></td>>
+  </ng-container>
+   <ng-container matColumnDef="E_name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.E_name}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="E_discription">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Discription </th>
+    <td mat-cell *matCellDef="let element"> {{element.E_discription}} </td>
+  </ng-container>
+
+  <!-- Address Column -->
+  <ng-container matColumnDef="E_Address">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
+    <td mat-cell *matCellDef="let element"> {{element.E_Address}} </td>
+  </ng-container>
+
+    <!-- E_primary_email Column -->
+
+  <ng-container matColumnDef="E_primary_email">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+    <td mat-cell *matCellDef="let element"> {{element.E_primary_email}} </td>
+  </ng-container>
+
+    <!-- E_primary_mobile Column -->
+
+  <ng-container matColumnDef="E_primary_mobile">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Mobile </th>
+    <td mat-cell *matCellDef="let element"> {{element.E_primary_mobile}} </td>
+  </ng-container>
+    <!-- E_reference_code Column -->
+
+  <ng-container matColumnDef="E_reference_code">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Reference_code </th>
+    <td mat-cell *matCellDef="let element"> {{element.E_reference_code}} </td>
+  </ng-container>
+      <!-- E_logo_url Column -->
+
+  <ng-container matColumnDef="E_logo_url">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Logo_url </th>
+   <td mat-cell *matCellDef="let element"> {{element.E_logo_url}} 
+    <mat-icon color="warn" svgIcon="eye" (click)="openTOSeeImage(element)"></mat-icon>
+
+   </td>
+  </ng-container>
+   
+  <ng-container matColumnDef="Actions" stickyEnd>
+      <th mat-header-cell  *matHeaderCellDef> <b>Actions</b> </th>
+      <td mat-cell *matCellDef="let element" >
+        <mat-icon color="primary" svgIcon="edit" (click)="openDialog(element)"></mat-icon> &nbsp;&nbsp;&nbsp; <mat-icon color="warn" svgIcon="delete" (click)="delete(element)"></mat-icon> 
+      </td>
+    </ng-container>
+ 
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator  [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+<br>
+ 
+
+ 
+<mat-chip-list>
+<mat-chip [(ngStyle)]="kk" (click)="openDialogToCreate()" selected>Add Enterprise</mat-chip>
+<mat-chip [(ngStyle)]="kk" (click)="gotollusers(1)" selected>All Users</mat-chip>
+ 
+
+</mat-chip-list>
+
+ 
+
+</div>
+ 
+ <router-outlet></router-outlet>
+</div>
+
+ 
+    

@@ -1,0 +1,117 @@
+<div class="deco">
+ <h2>USER DETAILS FOR ID: <span class="text-orange">{{id}} </span></h2>
+ <!-- <button>clear</button>  -->
+<div>
+  
+
+    <div class="example-container mat-elevation-z8">
+        <table mat-table [dataSource]="model" matSort>
+           
+          <ng-container matColumnDef="position" sticky>
+           <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>No</b> </th>
+           <td mat-cell *matCellDef="let element; let i = index">{{i+1}}</td>
+         </ng-container>
+        
+         <ng-container matColumnDef="U_id">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Id</b> </th>>
+           <td mat-cell *matCellDef="let element">{{element.U_id}}</td>
+         </ng-container>
+          <ng-container matColumnDef="U_mobile">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header> <b> Mobile </b> </th>
+           <td mat-cell *matCellDef="let element">{{element.U_mobile}}</td>
+         </ng-container>
+       
+          <ng-container matColumnDef="U_email">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header><b> Email </b> </th>
+           <td mat-cell *matCellDef="let element"> {{element.U_email}} </td>
+         </ng-container>
+       
+          <ng-container matColumnDef="U_idproof">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>ID Proof </b></th>
+           <td mat-cell *matCellDef="let element"> {{element.U_idproof}} </td>
+         </ng-container>
+       
+        
+         <ng-container matColumnDef="U_highestquilifications">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header><b>H.Qualification</b>  </th>
+           <td mat-cell *matCellDef="let element"> {{element.U_highestquilifications}} </td>
+         </ng-container>
+       
+        
+         <ng-container matColumnDef="U_ielts_score">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>IELTS Score </b></th>
+           <td mat-cell *matCellDef="let element"> {{element.U_ielts_score}} </td>
+         </ng-container>
+        
+         <ng-container matColumnDef="U_ielts_reading">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header><b> R_Score</b> </th>
+           <td mat-cell *matCellDef="let element"> {{element.U_ielts_reading}} </td>
+         </ng-container>
+        
+         <ng-container matColumnDef="U_ielts_writing">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header><b> W_Score </b></th>
+          <td mat-cell *matCellDef="let element"> {{element.U_ielts_writing}} </td>
+         </ng-container>
+       
+       
+         <ng-container matColumnDef="U_ielts_speaking">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header><b> S_Score </b></th>
+          <td mat-cell *matCellDef="let element"> {{element.U_ielts_speaking}} </td>
+         </ng-container>
+        
+         <ng-container matColumnDef="U_ielts_listening">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header><b>L_Score </b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.U_ielts_listening}} </td>
+         </ng-container>
+       
+         <ng-container matColumnDef="U_ielts_CSR">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>CSR </b></th>
+          <td  mat-cell *matCellDef="let element"> {{element.U_ielts_CSR}} </td>
+         </ng-container>
+       
+         <ng-container matColumnDef="U_change_status">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header><b>U_Change_Status</b>  </th>
+          <td mat-cell *matCellDef="let element"> {{element.U_ielts_writing}} </td>
+         </ng-container>
+       
+         <ng-container matColumnDef="U_change_edit_status">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Edit_status</b> </th>
+          <td mat-cell *matCellDef="let element"> {{element.U_change_edit_status}} </td>
+         </ng-container>
+       
+         <ng-container matColumnDef="U_message">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header><b>Message</b>  </th>
+          <td mat-cell *matCellDef="let element"> {{element.U_message}} </td>
+         </ng-container>
+       
+         <ng-container matColumnDef="U_additional_comment">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Add. Comment </b></th>
+          <td mat-cell *matCellDef="let element"> {{element.U_additional_comment}} </td>
+         </ng-container>
+       
+         <ng-container matColumnDef="U_visa_status">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header><b>Visa Status</b>  </th>
+          <td mat-cell *matCellDef="let element"> {{element.U_visa_status}} </td>
+         </ng-container>
+       
+         <ng-container matColumnDef="E_id">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header><b>E_id</b>  </th>
+          <td mat-cell *matCellDef="let element"> {{element.E_id}} </td>
+         </ng-container>
+      
+       
+       <ng-container matColumnDef="Actions" stickyEnd>
+         <th mat-header-cell  *matHeaderCellDef> <b>Actions</b> </th>
+         <td mat-cell *matCellDef="let element" >
+           <mat-icon color="primary" svgIcon="edit" (click)="openDialogEdit(element)"></mat-icon> &nbsp;&nbsp;&nbsp; <mat-icon color="warn" svgIcon="delete" (click)="delete(element)"></mat-icon> 
+         </td>
+       </ng-container>
+         <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true " ></tr>
+         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+       </table>
+       <mat-paginator class="page" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+       </div>
+
+
+
+   

@@ -1,0 +1,64 @@
+ 
+.xx{
+ margin-right:20px
+}
+ 
+
+.example-container {
+  height: auto;
+  width: 100%;
+  overflow: auto;
+ }
+
+ 
+
+ 
+
+th.mat-column-position, td.mat-column-position {
+  padding-left: 16px;
+ }
+th.mat-column-U_email, td.mat-column-U_email{
+  padding-left: 16px;
+  }
+
+th.mat-column-E_id,td.mat-column-E_id{
+    padding: 16px;
+    }
+ 
+    
+th.mat-column-Actions,td.mat-column-Actions{
+        padding-left: 24px;
+
+  }
+.mat-table-sticky:first-child {
+  border-right: 1px solid #e0e0e0;
+  }
+   
+.mat-table-sticky:last-child {
+  border-left: 1px solid #e0e0e0;
+  width: 100px;
+  
+ }
+
+td.mat-cell-Actions{
+  width: 70px;
+} 
+ 
+  h2{
+    color:black;
+    
+  }
+ 
+.outer{
+  padding: 8px;
+}
+  
+table {
+  width: 100%;
+ }
+
+ .helloheading{
+   padding: 24px;
+   flex: 1 1 auto;
+  }
+  

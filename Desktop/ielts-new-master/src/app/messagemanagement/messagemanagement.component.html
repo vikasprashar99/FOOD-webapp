@@ -1,0 +1,67 @@
+<link
+  href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="outer">
+  <h2>MESSAGING PANEL</h2>
+</div>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+  <hr />
+  <div class="row">
+    <div class="col-sm-3 col-md-2">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active">
+          <h2><b> Inbox</b></h2>
+        </li>
+      </ul>
+    </div>
+
+    <div class="responsive">
+      <div class="tab-content">
+        <div class="list-group">
+          <mat-accordion *ngFor="let a of mainArray">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title class="mat-content"
+                  ><b> {{ a.id }}</b>
+                </mat-panel-title>
+                <mat-panel-description class="mat-des">
+                  Check Message and Time
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <br />
+              <div *ngFor="let item of a.array">
+                <div>
+                  <b>{{ item.messages }}</b> &#8594;
+                  {{ item.date }}
+                </div>
+              </div>
+
+              <br />
+
+              <form [formGroup]="Myform">
+                <mat-form-field>
+                  <textarea
+                    matInput
+                    placeholder="Write Your Message Here"
+                    formControlName="id"
+                  ></textarea>
+                </mat-form-field>
+              </form>
+              &nbsp;<button class="but" (click)="send(a)">
+                Send
+              </button> </mat-expansion-panel
+            ><br
+          /></mat-accordion>
+        </div>
+      </div>
+      <!-- </div> -->
+    </div>
+  </div>
+</div>

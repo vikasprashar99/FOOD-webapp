@@ -1,0 +1,103 @@
+
+<h3 mat-dialog-title align="left">EDIT USER</h3>
+<mat-dialog-content>
+   <form [formGroup]="enterprise" class="example-form">
+    <mat-form-field>
+      <input matInput placeholder="User Id"  formControlName="U_id" readonly>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Mobile No" formControlName="U_mobile">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="U_email" readonly>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Id Proof Url" formControlName="U_idproof">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input  matInput placeholder="Highest Qualification" formControlName="U_highestquilifications">
+    
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="IELTS Score" formControlName="U_ielts_score">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="IELTS Reading"formControlName="U_ielts_reading">
+    </mat-form-field>
+    
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="IELTS Writing"formControlName="U_ielts_writing">
+    </mat-form-field>
+    <br>
+  
+    <mat-form-field>
+      <input matInput placeholder="IELTS Speaking"formControlName="U_ielts_speaking">
+    </mat-form-field>
+    <br>
+   
+    
+    <mat-form-field>
+      <input matInput placeholder="Ielts Listening"formControlName="U_ielts_listening">
+    </mat-form-field>
+    <br>
+    
+    <mat-form-field>
+      <input matInput placeholder="IELTS CSR"formControlName="U_ielts_CSR">
+    </mat-form-field>
+    <br>
+    
+    <mat-form-field>
+      <input matInput placeholder="User Change Status"formControlName="U_change_status">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="User Change edit Status"formControlName="U_change_edit_status">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Message"formControlName="U_message">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Additional Comment"formControlName="U_additional_comment">
+    </mat-form-field>
+    <br>
+  
+    <mat-form-field>
+      <input matInput placeholder="Visa Status"formControlName="U_visa_status">
+    </mat-form-field>
+    <br>
+    <div>
+    <mat-form-field>
+      <input matInput placeholder="E_id"formControlName="E_id">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Select E_id" #clientValue  (selectionChange)="changeClient($event.value)">
+        <mat-option *ngFor="let hh of EIDS" [value]="hh.E_id">
+          {{hh.E_id}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+    <br>
+   </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <!-- <mat-chip-list>
+        <mat-chip [(ngStyle)]="kk"[mat-dialog-close]="enterprise" (click)="submit()" selected>Save</mat-chip>
+        <mat-chip [(ngStyle)]="kk" mat-dialog-close (click)="noOneClicked()" selected>Close</mat-chip>
+        
+        </mat-chip-list> -->
+  <!-- <button mat-button [(ngStyle)]="kk"  [mat-dialog-close]="enterprise" (click)="submit()">Save</button> -->
+  <mat-chip [(ngStyle)]="kk" (click)="submit()" selected style="margin-right:8px">Save</mat-chip> 
+<mat-chip [(ngStyle)]="kk" (click)="noOneClicked()">Close</mat-chip>  
+<!-- <button mat-button mat-dialog-close [(ngStyle)]="kk" (click)="noOneClicked()">Close</button> -->
+
+</mat-dialog-actions>

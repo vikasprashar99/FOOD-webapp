@@ -1,0 +1,35 @@
+
+<mat-sidenav-container class="example-container">
+               
+    <mat-sidenav opened mode="side">
+        <br >
+        <mat-icon [(ngStyle)]="h"   svgIcon="home" (click)="select(0)"></mat-icon>
+        <br>
+        <br>
+        <br>
+        <mat-icon  [(ngStyle)]="u" *ngIf="dashboard" svgIcon="user" (click)="select(1)"></mat-icon>
+        <br *ngIf="dashboard">
+        <br *ngIf="dashboard">
+        <br *ngIf="dashboard">
+
+        <mat-icon  [(ngStyle)]="m" svgIcon="message" (click)="select(2)"></mat-icon>
+        <br>
+        <br>
+        <br>
+
+        <mat-icon   [(ngStyle)]="n" svgIcon="notification" (click)="select(3)"></mat-icon>
+        <br>
+        <br>
+        <mat-icon   [(ngStyle)]="l" svgIcon="logout" (click)="select(4)"></mat-icon>
+        <br>
+        <br>
+
+ 
+     </mat-sidenav>
+     
+  
+    <mat-sidenav-content>
+  
+<router-outlet></router-outlet>
+</mat-sidenav-content>
+</mat-sidenav-container>

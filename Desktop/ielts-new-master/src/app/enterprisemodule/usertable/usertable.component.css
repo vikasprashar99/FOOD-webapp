@@ -1,0 +1,64 @@
+.example-card {
+    max-width: 100%;
+  }
+
+ .deco{
+   padding: 8px;
+ } 
+ .text-orange{
+  color: blue;
+ }
+
+ .example-container {
+  height: auto;
+  width: 100%;
+  overflow: auto;
+ }
+ table {
+  width: 150%;
+ }
+
+ 
+
+th.mat-column-position, td.mat-column-position {
+  padding-left: 16px;
+ }
+th.mat-column-U_email, td.mat-column-U_email{
+  padding-left: 16px;
+  }
+
+th.mat-column-U_id,td.mat-column-U_id{
+    padding: 16px;
+    }
+ 
+    
+th.mat-column-Actions,td.mat-column-Actions{
+        padding-left: 24px;
+
+  }
+.mat-table-sticky:first-child {
+  border-right: 1px solid #e0e0e0;
+  }
+   
+.mat-table-sticky:last-child {
+  border-left: 1px solid #e0e0e0;
+  width: 100px;
+  
+ }
+
+td.mat-cell-Actions{
+  width: 100px;
+} 
+ 
+  h2{
+    color:black;
+    
+  }
+ 
+.outer{
+  padding: 8px;
+}
+.page{
+  width: 150%;
+
+ }
